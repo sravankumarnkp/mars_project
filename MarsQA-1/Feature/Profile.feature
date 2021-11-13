@@ -85,7 +85,7 @@ Scenario: Test 04 Edit Profile with First Name and with out Last Name
 		Examples: 
 		| description |
 		| @           |
-		|             |
+		| #           |
 
 		#profile Languages 
 		@profileLanguages @Onboarding
@@ -95,9 +95,11 @@ Scenario Outline: Test 10 Add a languages succcessfully
 	And i choose level as '<level>' and clickon add button
 	Then Pop up message displayed as '<lname>'  has been added to your languages
 	Examples: 
-	| lname   | level |
-	| hindi   | Basic |
-	| english | Basic |
+	| lname    | level |
+	| hindi    | Basic |
+	| english  | Basic |
+	| english1 | Basic |
+	| tamil    | Basic |
 	#profileLanguages same languages
 
 @profileLanguages @Onboarding
