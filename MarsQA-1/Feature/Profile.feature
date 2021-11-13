@@ -64,7 +64,7 @@ Scenario: Test 04 Edit Profile with First Name and with out Last Name
 
 		#profile descrption 
 		@profiledescription @Onboarding
-		Scenario Outline: Test 08 Change description with some description on my profile successfully
+		Scenario Outline: Test 08 Edit description with some valid description data
 		Given I logged into Trade Skills portal successfully
 		And I click on Description edit pen icon
 		When I edit the '<description>' And click on save button
@@ -89,7 +89,7 @@ Scenario: Test 04 Edit Profile with First Name and with out Last Name
 
 		#profile Languages 
 		@profileLanguages @Onboarding
-Scenario Outline: Test 10 Add a languages succcessfully
+Scenario Outline: Test 10 Add a languages with valid data  succcessfully
 	Given I logged into Trade Skills portal successfully
 	When i click on languages tab, and click on addnew button and chooselanguage as '<lname>' 
 	And i choose level as '<level>' and clickon add button
@@ -123,7 +123,7 @@ Scenario Outline: Test 12 Add a  languages  with out level should pop up Error m
 	| hindi |
 	#profileLanguages edit  languages 
 	@profileLanguages @Onboarding
-Scenario Outline: Test 13 Edit a languages should pop up sucessfully 
+Scenario Outline: Test 13 Edit a languages with valid data should pop up sucessfully 
 	Given I logged into Trade Skills portal successfully
 	When i click on languages tab, and click on  edit button   add choose language as '<lang>' 
 	And i choose '<level>' and clickon update button
@@ -140,7 +140,7 @@ Scenario: Test 14 Edit a languages with same languages should pop up Error messa
 	Then Pop up message displayed as Duplicated data
 	#profileLanguages delete
 @certification @Onboarding
-Scenario: Test 28 delete languages details
+Scenario: Test 28 delete languages with data 
 	Given I logged into Trade Skills portal successfully
 	When Seller click on languages tab
 	And Seller delete his languages with '<lang>'

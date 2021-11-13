@@ -396,13 +396,13 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test 08 Change description with some description on my profile successfully")]
+        [NUnit.Framework.DescriptionAttribute("Test 08 Edit description with some valid description data")]
         [NUnit.Framework.CategoryAttribute("profiledescription")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("my name is sravan, i have some skills and i want to share my skils. please find m" +
             "y availabilties on profile page", null)]
         [NUnit.Framework.TestCaseAttribute("1", null)]
-        public virtual void Test08ChangeDescriptionWithSomeDescriptionOnMyProfileSuccessfully(string description, string[] exampleTags)
+        public virtual void Test08EditDescriptionWithSomeValidDescriptionData(string description, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "profiledescription",
@@ -412,7 +412,7 @@ this.ScenarioInitialize(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 08 Change description with some description on my profile successfully", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 08 Edit description with some valid description data", null, @__tags);
 #line 67
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -504,14 +504,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test 10 Add a languages succcessfully")]
+        [NUnit.Framework.DescriptionAttribute("Test 10 Add a languages with valid data  succcessfully")]
         [NUnit.Framework.CategoryAttribute("profileLanguages")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("hindi", "Basic", null)]
         [NUnit.Framework.TestCaseAttribute("english", "Basic", null)]
         [NUnit.Framework.TestCaseAttribute("english1", "Basic", null)]
         [NUnit.Framework.TestCaseAttribute("tamil", "Basic", null)]
-        public virtual void Test10AddALanguagesSucccessfully(string lname, string level, string[] exampleTags)
+        public virtual void Test10AddALanguagesWithValidDataSucccessfully(string lname, string level, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "profileLanguages",
@@ -521,7 +521,7 @@ this.ScenarioInitialize(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 10 Add a languages succcessfully", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 10 Add a languages with valid data  succcessfully", null, @__tags);
 #line 92
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -661,11 +661,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test 13 Edit a languages should pop up sucessfully")]
+        [NUnit.Framework.DescriptionAttribute("Test 13 Edit a languages with valid data should pop up sucessfully")]
         [NUnit.Framework.CategoryAttribute("profileLanguages")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("english", "Conversational", null)]
-        public virtual void Test13EditALanguagesShouldPopUpSucessfully(string lang, string level, string[] exampleTags)
+        public virtual void Test13EditALanguagesWithValidDataShouldPopUpSucessfully(string lang, string level, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "profileLanguages",
@@ -675,7 +675,7 @@ this.ScenarioInitialize(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 13 Edit a languages should pop up sucessfully", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 13 Edit a languages with valid data should pop up sucessfully", null, @__tags);
 #line 126
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -760,11 +760,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test 28 delete languages details")]
+        [NUnit.Framework.DescriptionAttribute("Test 28 delete languages with data")]
         [NUnit.Framework.CategoryAttribute("certification")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("english", null)]
-        public virtual void Test28DeleteLanguagesDetails(string lang, string[] exampleTags)
+        public virtual void Test28DeleteLanguagesWithData(string lang, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "certification",
@@ -774,7 +774,7 @@ this.ScenarioInitialize(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 28 delete languages details", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 28 delete languages with data", null, @__tags);
 #line 143
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
