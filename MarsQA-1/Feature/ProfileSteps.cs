@@ -145,31 +145,47 @@ namespace MarsQA_1.Feature
         [When(@"i click on languages tab, and click on addnew button and chooselanguage as '(.*)'")]
         public void WhenIClickOnLanguagesTabAndClickOnAddnewButtonAndChooselanguageAs(string p0)
         {
-            pageObj.addNewLanguages(driver, p0);
+            i=pageObj.addNewLanguages(driver, p0);
         }
 
         [When(@"i choose level as '(.*)' and clickon add button")]
         public void WhenIChooseLevelAsAndClickonAddButton(string p0)
         {
-            pageObj.addLanguageLevel(driver, p0);
+            if (i == -1)
+            {
+                test.Log(LogStatus.Info, "adding of lang more than 4");
+
+            }
+            else
+            {
+                pageObj.addLanguageLevel(driver, p0);
+            }
         }
 
         [Then(@"Pop up message displayed as '(.*)'  has been added to your languages")]
         public void ThenPopUpMessageDisplayedAsHasBeenAddedToYourLanguages(string p0)
         {
-            string popUp=pageObj.textGetPopUpMessage(driver);
-           
-            Console.WriteLine("popup is" + popUp);
-            Assert.That(p0 + " has been added to your languages" == popUp, "Languages not added to profile ");
+            if (i == -1) { }
+            else
+            {
+                string popUp = pageObj.textGetPopUpMessage(driver);
+
+                Console.WriteLine("popup is" + popUp);
+                Assert.That(p0 + " has been added to your languages" == popUp, "Languages not added to profile ");
+            }
         }
 
         [Then(@"Pop up message displayed as Duplicated data")]
         public void ThenPopUpMessageDisplayedAsDuplicatedData()
         {
-            string popUp = pageObj.textGetPopUpMessage(driver);
+            if (i == -1) { }
+            else
+            {
+                string popUp = pageObj.textGetPopUpMessage(driver);
 
-            Console.WriteLine("popup is" + popUp);
-            Assert.That("Duplicated data" == popUp, "language some other error ");
+                Console.WriteLine("popup is" + popUp);
+                Assert.That("Duplicated data" == popUp, "language some other error ");
+            }
         }
 
         [When(@"i dont choose level and clickon add button")]

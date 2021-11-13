@@ -23,6 +23,8 @@ namespace MarsQA_1.SpecflowPages.Pages
             //finding the descrption textbox element
             IWebElement descFiled = driver.FindElement(By.XPath ("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
             descFiled.Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+
             descFiled.Clear();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
@@ -64,19 +66,27 @@ namespace MarsQA_1.SpecflowPages.Pages
 
         }
         //add new laungages
-        public void addNewLanguages(IWebDriver driver, string lang)
+        public int addNewLanguages(IWebDriver driver, string lang)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             //click on laungages tab
-            driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]")).Click();
+            try
+            {
+                driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]")).Click();
 
-            IWebElement langField = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div"));
-            langField.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            IWebElement addlangField= driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input"));
-             addlangField.Clear();
-            addlangField.SendKeys(lang);
-
+                IWebElement langField = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div"));
+                langField.Click();
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                IWebElement addlangField = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input"));
+                addlangField.Clear();
+                addlangField.SendKeys(lang);
+                return 0;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("You canot add the more than 4 lang to profile");
+                return -1;   
+            }
         }
         public int getlanguagerowfield(IWebDriver driver,string lang)
         {

@@ -85,6 +85,7 @@ Scenario: Test 04 Edit Profile with First Name and with out Last Name
 		Examples: 
 		| description |
 		| @           |
+		|             |
 
 		#profile Languages 
 		@profileLanguages @Onboarding
