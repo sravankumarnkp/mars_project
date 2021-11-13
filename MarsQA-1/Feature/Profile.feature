@@ -85,7 +85,6 @@ Scenario: Test 04 Edit Profile with First Name and with out Last Name
 		Examples: 
 		| description |
 		| @           |
-		| $@          |
 
 		#profile Languages 
 		@profileLanguages @Onboarding
@@ -95,12 +94,13 @@ Scenario Outline: Test 10 Add a languages succcessfully
 	And i choose level as '<level>' and clickon add button
 	Then Pop up message displayed as '<lname>'  has been added to your languages
 	Examples: 
-	| lname | level |
-	| hindi | Basic |
+	| lname   | level |
+	| hindi   | Basic |
+	| english | Basic |
 	#profileLanguages same languages
 
 @profileLanguages @Onboarding
-Scenario Outline: Test 11 Add a languages succcessfully
+Scenario Outline: Test 11 Add a Duplicate data languages 
 	Given I logged into Trade Skills portal successfully
 	When i click on languages tab, and click on addnew button and chooselanguage as '<lname>' 
 	And i choose level as '<level>' and clickon add button

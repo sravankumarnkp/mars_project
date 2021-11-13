@@ -454,7 +454,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("profiledescription")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("@", null)]
-        [NUnit.Framework.TestCaseAttribute("$@", null)]
         public virtual void Test09ChangeDescriptionWithNotAcceptedDataOnMyProfile(string description, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -508,6 +507,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("profileLanguages")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("hindi", "Basic", null)]
+        [NUnit.Framework.TestCaseAttribute("english", "Basic", null)]
         public virtual void Test10AddALanguagesSucccessfully(string lname, string level, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -519,7 +519,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 10 Add a languages succcessfully", null, @__tags);
-#line 92
+#line 91
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -539,16 +539,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 93
+#line 92
  testRunner.Given("I logged into Trade Skills portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 94
+#line 93
  testRunner.When(string.Format("i click on languages tab, and click on addnew button and chooselanguage as \'{0}\'", lname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 95
+#line 94
  testRunner.And(string.Format("i choose level as \'{0}\' and clickon add button", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 96
+#line 95
  testRunner.Then(string.Format("Pop up message displayed as \'{0}\'  has been added to your languages", lname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -556,11 +556,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test 11 Add a languages succcessfully")]
+        [NUnit.Framework.DescriptionAttribute("Test 11 Add a Duplicate data languages")]
         [NUnit.Framework.CategoryAttribute("profileLanguages")]
         [NUnit.Framework.CategoryAttribute("Onboarding")]
         [NUnit.Framework.TestCaseAttribute("hindi", "Fluent", null)]
-        public virtual void Test11AddALanguagesSucccessfully(string lname, string level, string[] exampleTags)
+        public virtual void Test11AddADuplicateDataLanguages(string lname, string level, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "profileLanguages",
@@ -570,7 +570,7 @@ this.ScenarioInitialize(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 11 Add a languages succcessfully", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 11 Add a Duplicate data languages", null, @__tags);
 #line 103
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

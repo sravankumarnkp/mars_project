@@ -189,14 +189,30 @@ namespace MarsQA_1.Feature
         {
             //geeting the row of the lang 
              i=pageObj.getlanguagerowfield(driver,p0);
-            //sending the row number into the edit lang
-            pageObj.clickoneditlangButton(driver,i);
+            if (i == -1)
+            {
+                
+                Console.WriteLine("can not find the lang ");
+               // driver.Quit();
+            }
+            else
+            {
+                //sending the row number into the edit lang
+                pageObj.clickoneditlangButton(driver, i);
+            }
         }
 
         [When(@"i choose '(.*)' and clickon update button")]
         public void WhenIChooseAndClickonUpdateButton(string p0)
         {
-            pageObj.updateLanguageLeve(driver,p0,i);
+            if (i == -1)
+            {
+                Console.WriteLine("can not find the lang ");
+            }
+            else
+            {
+                pageObj.updateLanguageLeve(driver, p0, i);
+            }
         }
 
         [When(@"i choose level and clickon update button")]
@@ -208,10 +224,17 @@ namespace MarsQA_1.Feature
         [Then(@"Pop up message displayed english   has been updated  to your languages")]
         public void ThenPopUpMessageDisplayedEnglishHasBeenUpdatedToYourLanguages()
         {
-            string popUp = pageObj.textGetPopUpMessage(driver);
+            if (i == -1)
+            {
+                Console.WriteLine("can not find the lang u choosed");
+            }
+            else
+            {
+                string popUp = pageObj.textGetPopUpMessage(driver);
 
-            Console.WriteLine("popup is" + popUp);
-            Assert.That("english has been updated to your languages" == popUp, "language some other error ");
+                Console.WriteLine("popup is" + popUp);
+                Assert.That("english has been updated to your languages" == popUp, "language some other error ");
+            }
         }
 
 
@@ -231,11 +254,20 @@ namespace MarsQA_1.Feature
         [When(@"Seller delete his languages with '(.*)'")]
         public void WhenSellerDeleteHisLanguagesWith(string p0)
         {
-
+            
             //geeting the row of the lang 
             i = pageObj.getlanguagerowfield(driver, p0);
-            //sending the row number into the edit lang
-            pageObj.clickonedeleteButton(driver, i);
+            if (i == -1)
+            {
+                Console.WriteLine("canot find the lang for delete");
+                test.Log(LogStatus.Info, "canot find the lang for delete");
+
+            }
+            else
+            {
+                //sending the row number into the edit lang
+                pageObj.clickonedeleteButton(driver, i);
+            }
 
         }
 
@@ -243,10 +275,19 @@ namespace MarsQA_1.Feature
         [Then(@"Pop up massage displayed as languages entry successfully removed")]
         public void ThenPopUpMassageDisplayedAsLanguagesEntrySuccessfullyRemoved()
         {
-            string popUp = pageObj.textGetPopUpMessage(driver);
+            if (i == -1)
+            {
+                Console.WriteLine("canot find the lang for delete");
+                test.Log(LogStatus.Info, "canot find the lang for delete");
 
-            Console.WriteLine("popup is" + popUp);
-            Assert.That("english has been deleted from your languages" == popUp, "language some other error ");
+            }
+            else
+            {
+                string popUp = pageObj.textGetPopUpMessage(driver);
+
+                Console.WriteLine("popup is" + popUp);
+                Assert.That("english has been deleted from your languages" == popUp, "language some other error ");
+            }
         }
 
         [When(@"i click on skill tab, and click on add new button and skill as html")]

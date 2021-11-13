@@ -18,10 +18,11 @@ namespace MarsQA_1.SpecflowPages.Pages
         }
         public void editDescription(IWebDriver driver, String dess)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
             //finding the descrption textbox element
             IWebElement descFiled = driver.FindElement(By.XPath ("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
+            descFiled.Click();
             descFiled.Clear();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
@@ -40,6 +41,7 @@ namespace MarsQA_1.SpecflowPages.Pages
             return profileDesc.Text;
 
         }
+
         public String GetPopUpMessage(IWebDriver driver)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
@@ -53,9 +55,11 @@ namespace MarsQA_1.SpecflowPages.Pages
         }
         public String textGetPopUpMessage(IWebDriver driver)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             IWebElement successPopup = driver.FindElement(By.CssSelector("div[class='ns-box-inner']"));
-           // Console.WriteLine(successPopup.Text);
+            //IWebElement successPopup = driver.FindElement(By.XPath("/html/body/div[1]/div"));
+
+            // Console.WriteLine(successPopup.Text);
             return successPopup.Text;
 
         }
@@ -79,20 +83,33 @@ namespace MarsQA_1.SpecflowPages.Pages
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             int i = 1;
             IWebElement laxfield;
-        Label:
-            laxfield = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody["+i+"]/tr/td[1]"));
-            if (laxfield.Text==lang)
+            try
             {
-                return i;
+            Label:
+                laxfield = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[" + i + "]/tr/td[1]"));
+
+                if (laxfield.Text == lang)
+                {
+                    return i;
+                }
+                else if (i < 10)
+                {
+                    i++;
+                    goto Label;
+
+                }
+                else
+                {
+                    return -1;
+                }
             }
-            else
+            catch (Exception e)
             {
-                i++;
-                goto Label;
-
+                
+                
+                return -1;
             }
-
-            return 0;
+           
         }
         public void clickoneditlangButton(IWebDriver driver, int i)
         {
