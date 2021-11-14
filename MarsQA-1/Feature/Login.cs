@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MarsQA_1.Helpers;
 using RelevantCodes.ExtentReports;
 using TechTalk.SpecFlow;
-using static MarsQA_1.Helpers.CommonMethods;
+using static MarsQA_1.Utils.Start;
 
 namespace MarsQA_1.Feature
 {

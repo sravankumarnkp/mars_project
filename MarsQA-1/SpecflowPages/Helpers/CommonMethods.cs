@@ -10,6 +10,7 @@ using TechTalk.SpecFlow;
 
 namespace MarsQA_1.Helpers
 {
+    [Binding]
     public class CommonMethods
     {
         //Screenshots
@@ -17,9 +18,9 @@ namespace MarsQA_1.Helpers
 
         public class SaveScreenShotClass
         {
-            
-            public static string SaveScreenshot(IWebDriver driver, string ScreenShotFileName) 
-                // Definition
+
+            public static string SaveScreenshot(IWebDriver driver, string ScreenShotFileName)
+            // Definition
             {
                 var folderLocation = (ConstantHelpers.ScreenshotPath);
 
@@ -45,41 +46,9 @@ namespace MarsQA_1.Helpers
             throw new NotImplementedException();
         }
 
-        //ExtentReports
-        #region reports
-        public static ExtentTest test;
-        public static ExtentReports Extent;
-
-
-
-        public static void ExtentReports()
-        {
-            //creating html file with tag of the scenario
-            var folderLocation = (ConstantHelpers.ReportsPath);
-
-            if (!System.IO.Directory.Exists(folderLocation))
-            {
-                System.IO.Directory.CreateDirectory(folderLocation);
-            }
-            var tag = ScenarioContext.Current.ScenarioInfo.Title;
-            Console.WriteLine(tag);
-            var fileName1 = new StringBuilder(folderLocation);
-          //  Console.WriteLine(fileName1+"eeeeeeee");
-            fileName1.Append(tag.ToString());
-            fileName1.Append(DateTime.Now.ToString("_mss"));
-            fileName1.Append(".html");
-           // Console.WriteLine(fileName1);
-            Extent = new ExtentReports(fileName1.ToString(), true, DisplayOrder.NewestFirst);
-
-            Extent.LoadConfig(ConstantHelpers.ReportXMLPath);
-            
-            test = Extent.StartTest(ScenarioContext.Current.ScenarioInfo.Title);
-
-        }
-
         
     }
-    #endregion
+    
 
 
 }

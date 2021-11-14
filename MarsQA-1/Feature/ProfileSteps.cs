@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using RelevantCodes.ExtentReports;
 using TechTalk.SpecFlow;
 using static MarsQA_1.Helpers.CommonMethods;
+using static MarsQA_1.Utils.Start;
 
 
 namespace MarsQA_1.Feature
@@ -128,7 +129,7 @@ namespace MarsQA_1.Feature
         public void ThenShouldBeSavedSucessfullyOnProfilePage(string p0)
         {
             string getdesc=pageObj.getProfileDescrption(driver);
-            
+            Console.WriteLine(getdesc);
             Assert.That(p0 == getdesc, "acutal description and expected descrption not equal");
         }
 
@@ -154,7 +155,7 @@ namespace MarsQA_1.Feature
             if (i == -1)
             {
                 test.Log(LogStatus.Info, "adding of lang more than 4");
-
+                Console.WriteLine("cannot run the You canot add the more than 4 lang to profile");
             }
             else
             {
@@ -165,7 +166,10 @@ namespace MarsQA_1.Feature
         [Then(@"Pop up message displayed as '(.*)'  has been added to your languages")]
         public void ThenPopUpMessageDisplayedAsHasBeenAddedToYourLanguages(string p0)
         {
-            if (i == -1) { }
+            if (i == -1) {
+                Console.WriteLine("canot run this code You canot add the more than 4 lang to profile");
+            }
+
             else
             {
                 string popUp = pageObj.textGetPopUpMessage(driver);

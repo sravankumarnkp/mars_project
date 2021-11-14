@@ -18,7 +18,7 @@ namespace MarsQA_1.SpecflowPages.Pages
         }
         public void editDescription(IWebDriver driver, String dess)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(25);
 
             //finding the descrption textbox element
             IWebElement descFiled = driver.FindElement(By.XPath ("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
@@ -30,7 +30,7 @@ namespace MarsQA_1.SpecflowPages.Pages
 
             //sending the profile desc to descreption
             descFiled.SendKeys(dess);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             //click on save button
             driver.FindElement(By.XPath(
@@ -84,7 +84,7 @@ namespace MarsQA_1.SpecflowPages.Pages
             }
             catch(Exception e)
             {
-                Console.WriteLine("You canot add the more than 4 lang to profile");
+                Console.WriteLine("You canot add the more than 4 lang to profile"+e);
                 return -1;   
             }
         }
